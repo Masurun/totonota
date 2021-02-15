@@ -1,4 +1,5 @@
 FactoryBot.define do
-  factory :sns_credential do
+  factory :post do
+    
   end
 end

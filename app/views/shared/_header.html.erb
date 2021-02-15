@@ -1,0 +1,32 @@
+<header>
+    <div class="header-logo">
+      <%=link_to "Totonota", about_path%>
+    </div>
+    <ul class="header-menus">
+            <li>
+              <%=link_to("Totonotaとは？",about_path )%>
+            </li>
+          <li>
+            <%=link_to("ととのい一覧",root_path)%>
+          </li>
+          <% if user_signed_in? %>
+          <li>
+              <%=link_to("ととのい投稿",root_path)%>
+          </li>
+     <li>
+     <%= "#{current_user.nickname}" %>
+     </li>
+        
+     <li>
+     <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+     </li>
+     <% else %>
+     
+     <li>
+     <%= link_to 'ログイン', new_user_session_path %>
+     </li>
+     <li><%= link_to '新規登録', new_user_path %></li>
+      <% end %>
+
+
+  </header>

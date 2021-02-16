@@ -1,0 +1,39 @@
+.header-logo{
+  font-size: 55px;
+  margin-left: 10px;
+}
+
+header {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  color: aliceblue;
+}
+
+header a{
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.header-menus {
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+
+}
+
+.about-main{
+  background-size: cover;
+  background-image: url("/sauna.png");
+  background-repeat:no-repeat;
+  top: 0;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  padding: 200px 0 100px;
+  text-align: center;
+  color: aliceblue;
+  background-position: center 50%;
+  position: absolute;
+  overflow: scroll;
+}

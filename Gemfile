@@ -59,7 +59,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'pry-rails'
 gem 'mini_magick'
-gem 'image_processing','~>1.2'
+gem 'image_processing', '~> 1.2'
 gem 'active_hash'
 
 gem 'aws-sdk-s3', require: false
@@ -68,3 +68,4 @@ gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
 gem 'omniauth', '~>1.9.1'
 gem 'omniauth-twitter'
+gem 'active_hash'

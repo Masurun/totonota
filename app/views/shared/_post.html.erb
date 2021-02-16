@@ -1,0 +1,12 @@
+<div class="card">
+  <%if post.image.attached?%>
+    <%= link_to image_tag(post.image.variant(resize: '500x500'),class: :card__img),root_path%> 
+  <%end%>
+  <div class="card__body">
+    <%= link_to post.spa_name, root_path, class: :card__title%>
+    <p class="card__summary">
+      <%= post.features%>
+    </p>
+    <%= link_to "by #{post.user.nickname}",root_path, class: :card__user %>
+  </div>
+</div>

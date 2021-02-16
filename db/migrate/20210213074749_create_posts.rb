@@ -7,6 +7,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.integer :visit_time_id,       null: false
       t.text :review
       t.text :strange_person
+      t.references :user,             foreign_key: true
       t.timestamps
     end
   end

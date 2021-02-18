@@ -1,11 +1,10 @@
 <%=render partial: "shared/header"%>
 <div class= "about-main">
-    <div class="main">
-      <div class="inner">
-        <div class="card__wrapper">
-          <%=render partial: "shared/post",collection: @posts%>
-        </div>
-      </div>
-    </main>
+   <h1 class="index-heading">
+   みんなのととのい投稿一覧
+    </h1> 
+      
+    <div class="card__wrapper">
+      <%=render partial: "shared/post",collection: @posts%>
     </div>
 </div>

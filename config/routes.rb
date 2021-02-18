@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   }
   root 'homes#top'
   resources :users, only: :new
-  resources :posts
+  resources :posts do
+    collection do 
+      get 'search'
+    end
+  end
   get "about"=>"homes#about"
+
 end

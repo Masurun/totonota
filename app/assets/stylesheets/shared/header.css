@@ -1,3 +1,17 @@
+.header-upper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.upper-left{
+  display: flex;
+}
+.upper-nickname{
+  margin-right: 10px;
+}
+.search-form{
+  margin-right: 10px;
+}
 .header-logo{
   font-size: 55px;
   margin-left: 10px;

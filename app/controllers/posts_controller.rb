@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    before_action :authenticate_user!,except:[:index,:show]
+    before_action :authenticate_user!,except:[:index,:show,:search]
     before_action :set_post,  only:[:show,:edit,:destroy,:update]
   def index
     @posts=Post.all.includes(:user).order('created_at DESC')
@@ -16,6 +16,10 @@ class PostsController < ApplicationController
     end
   end
   def show
+  end
+
+  def search
+    @posts =Post.search(params[:keyword])
   end
 
   def edit

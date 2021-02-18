@@ -1,20 +1,16 @@
 <header>
   <div class="header-container">
+    <div class = "header-upper">
     <div class="header-logo">
       <%=link_to "Totonota", about_path%>
     </div>
-    <ul class="header-menus">
-            <li>
-              <%=link_to("Totonotaとは？",about_path )%>
-            </li>
-          <li>
-            <%=link_to("ととのい一覧",posts_path)%>
-          </li>
-          <% if user_signed_in? %>
-          <li>
-              <%=link_to("ととのい投稿",new_post_path)%>
-          </li>
-     <li>
+    <div class = "upper-left">
+    <%=form_with(url: search_posts_path,local: true,method: :get,class:"search-form") do |f|%>
+          <%=f.text_field :keyword, placeholder: "検索する",class: "search-input"%>
+          <%=f.submit "検索",class:"search-btn"%>
+          <%end%>
+        <% if user_signed_in? %>
+     <li class = "upper-nickname">
      <%= "#{current_user.nickname}" %>
      </li>
         
@@ -28,6 +24,19 @@
      </li>
      <li><%= link_to '新規登録', new_user_path %></li>
       <% end %>
-
+      </div>  
+    </div>
+    <ul class="header-menus">
+            <li>
+              <%=link_to("Totonotaとは？",about_path )%>
+            </li>
+          <li>
+            <%=link_to("ととのい一覧",posts_path)%>
+          </li>
+          <% if user_signed_in? %>
+          <li>
+              <%=link_to("ととのい投稿",new_post_path)%>
+          </li>
+          <%end%>
   </div>
   </header>

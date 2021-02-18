@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-    before_action :authenticate_user!,except:[:index]
-    before_action :set_post,  only:[:show,:edit,:destroy]
+    before_action :authenticate_user!,except:[:index,:show]
+    before_action :set_post,  only:[:show,:edit,:destroy,:update]
   def index
     @posts=Post.all.includes(:user).order('created_at DESC')
   end
@@ -19,7 +19,14 @@ class PostsController < ApplicationController
   end
 
   def edit
+  end
 
+  def update
+    if @post.update(post_params)
+      redirect_to post_path(@post.id)
+    else
+      render :edit
+    end
   end
 
   def destroy

@@ -51,7 +51,7 @@
               <%=f.text_area :storange_person,id:"strange_person",placeholder:"変わった人(任意 100字まで) (筋トレする人、ヌシがいるなど)",maxlength:"100"%> 
               <div class = "post-btn-content">
                 <%=f.submit "投稿する",class:"posts-btn"%>
-                <%=link_to '戻る',root_path,class: "back-btn"%>
+                <%=link_to '戻る',post_path(@post.id),class: "back-btn"%>
               </div>
           <%end%>
         </div>

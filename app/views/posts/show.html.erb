@@ -17,9 +17,8 @@
     <%= link_to "投稿の削除",post_path(@post.id), class:"post-destroy" ,method: :delete%>
     <%end%>
     <%end%>
-    
     <div class="post-explain-box">
-      <span><%=@post.spa_name %></span>
+     <%=@post.review%>
     </div>
     <table class="detail-table">
       <tbody>

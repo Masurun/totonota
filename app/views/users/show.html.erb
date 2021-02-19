@@ -1,0 +1,33 @@
+<%=render partial: "shared/header"%>
+<div class= "about-main">
+<div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= @user.nickname%>のページ
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">名前</th>
+            <td class="table__col2"><%= @user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">マイサウナ</th>
+            <td class="table__col2"><%= @user.my_sauna %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">サウナ歴</th>
+            <td class="table__col2"><%= @user.period_sauna_year %>年<%= @user.period_sauna_month %>ヶ月</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="page-heading">
+        <%= @user.nickname%>の投稿
+      </h2>
+      <div class="user__card">
+        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
+        <%=render partial: "shared/post",collection: @posts%>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

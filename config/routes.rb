@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     end
   end
   get "about"=>"homes#about"
-
+  resources :users,only:[:show]
 end

@@ -2,10 +2,10 @@
   <%if post.image.attached?%>
     <%= link_to image_tag(post.image,size: "400x400"),post_path(post.id)%> 
   <%else%>
-    <%=link_to image_tag("/sauna_sample.png",size: "400x400")%>
+    <%=link_to image_tag("/sauna_sample.png",size: "400x400"),post_path(post.id)%>
   <%end%>
   <div class="card__body">
-    <%= link_to post.spa_name, root_path, class: :card__title%>
+    <%= link_to post.spa_name, post_path(post.id), class: :card__title%>
     <p class="card__summary">
       <%= post.features%>
     </p>

@@ -8,29 +8,29 @@
           <%=form_with model: @post,local: true do |f|%>
             <div class="weight-bold-text">
               施設名
-              <span class ="indispensable">必須</span>
+              <span class ="indispensable">(必須)</span>
             </div>  
               <%=f.text_area :spa_name,id:"posts-name",placeholder:"施設名(必須 40字まで)",maxlength:"40"%>
             <div class="weight-bold-text">
               来店時間
-              <span class ="indispensable">必須</span>
+              <span class ="indispensable">(必須)</span>
             </div>
               <%= f.collection_select(:visit_time_id,VisitTime.all, :id, :name, {}, {class:"select-box",id:"spa-visit_time"})%>
             <div class="weight-bold-text">
               混雑率
-              <span class ="indispensable">必須</span>
+              <span class ="indispensable">(必須)</span>
             </div>
               <%= f.collection_select(:congestion_rate_id,CongestionRate.all, :id, :name, {} ,{class:"select-box",id:"congestion_rate"})%>
             <div class="weight-bold-text">
-              特徴
-              <span class ="indispensable">必須</span>
+              特徴または一言
+              <span class ="indispensable">(必須)</span>
               </div>
-                <%=f.text_area :features,id:"features",placeholder:"特徴(必須 40字まで)",maxlength:"40"%>
+                <%=f.text_area :features,class: "post-text",id:"features",placeholder:"特徴(必須 40字まで)",maxlength:"40"%>
             
              <div class = "img-upload">
                 <div class="weight-bold-text">
                   画像
-                    <span class ="optional">任意</span>
+                    <span class ="optional">(任意)</span>
                 </div>  
              </div>
              <div class = "click-upload">
@@ -41,14 +41,14 @@
              </div>
             <div class="weight-bold-text">
               感想
-              <span class ="optional">任意</span>
+              <span class ="optional">(任意)</span>
             </div>
-             <%=f.text_area :review,id:"review",placeholder:"感想(必須 1,000字まで) (サウナ、水風呂、設備、ロウリュ、休憩スポット、食事、客層など思ったことを自由にお書きください。)",rows:"7",maxlength:"1000"%>
+             <%=f.text_area :review,class: "post-text-review",id:"review",placeholder:"感想(必須 1,000字まで) (サウナ、水風呂、設備、ロウリュ、休憩スポット、食事、客層など思ったことを自由にお書きください。)",rows:"7",maxlength:"1000"%>
             <div class="weight-bold-text">
               変わった人
-              <span class ="optional">任意</span>
+              <span class ="optional">(任意)</span>
             </div>  
-              <%=f.text_area :storange_person,id:"strange_person",placeholder:"変わった人(任意 100字まで) (筋トレする人、ヌシがいるなど)",maxlength:"100"%> 
+              <%=f.text_area :storange_person,class: "post-text",id:"strange_person",placeholder:"変わった人(任意 100字まで) (筋トレする人、ヌシがいるなど)",maxlength:"100"%> 
               <div class = "post-btn-content">
                 <%=f.submit "投稿する",class:"posts-btn"%>
                 <%=link_to '戻る',root_path,class: "back-btn"%>

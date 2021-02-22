@@ -4,6 +4,9 @@ class Post < ApplicationRecord
   belongs_to :congestion_rate
   belongs_to :user
   has_one_attached :image
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_posts, through: :favorites,source: :post
+
   with_options presence: true do
     validates :spa_name
     validates :features
@@ -19,6 +22,9 @@ class Post < ApplicationRecord
   validates :review, length: { maximum: 1000 }
   validates :strange_person, length: { maximum: 100 }
   validates :spa_name, length: { maximum: 40 }
+  def favorite_by?(user)
+    favorites.where(user_id: user.id).exist?
+  end
   def self.search(search)
     if search != ""
       Post.where('spa_name LIKE(?)',"%#{search}%")

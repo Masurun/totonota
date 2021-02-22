@@ -18,9 +18,11 @@
     <%end%>
     <%end%>
     <div class="post-explain-box">
+    レビュー
      <%=@post.review%>
     </div>
     <table class="detail-table">
+    サウナの情報
       <tbody>
         <tr>
           <th class="detail-post">特徴</th>
@@ -40,11 +42,22 @@
         </tr>
       </tbody>
     </table>
+    <% if user_signed_in? %>
     <div class="favorite-option">
       <div class="favorite-btn">
         <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
+       <p><span>お気に入り:</span><%=link_to @post.favorites.count,post_favorites_path(@post.id),method: :post%></p>
       </div>
+      <div class="report-btn">
+        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
+       <p><span>お気に入り解除:</span><%=link_to @post.favorites.count, post_favorites_path(@post.id), method: :delete %></p>
+      </div>
+     <div class="count-btn">
+       <div class="count-flag-icon">
+       <p><span>お気に入りされた数:</span><%= @post.favorites.count %></p>
+     </div>
+        <%else%>
+        <p>※※※お気に入りをするにはユーザー登録をしましょう※※※</p>
+      <%end%>
     </div>
-  </div>
-</div>
+ 

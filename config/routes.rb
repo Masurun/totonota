@@ -4,12 +4,12 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root 'homes#top'
-  resources :users, only: :new
+  get "about"=>"homes#about"
   resources :posts do
+    resources :favorites, only: [:create,:destroy]
     collection do 
       get 'search'
-    end
+    end 
   end
-  get "about"=>"homes#about"
-  resources :users,only:[:show]
+  resources :users,only:[:show,:new]
 end

@@ -61,7 +61,11 @@
 .post-explain-box{
   font-size: 18px;
   margin: 40px 0px;
-  max-width: 50vw;
+  max-width: 70vh;
+  overflow-wrap: anywhere;
+  background-color: cornsilk;
+  color: black;
+  
 }
 
 .detail-table {
@@ -99,4 +103,48 @@
 
 .favorite-star-icon {
   margin-right: 5px;
+}
+
+.report-btn {
+  border-radius: 40px;
+  width: 15vw;
+  min-width: 200px;
+  padding: 1vh 0;
+  color: black;
+  border: 2px solid #2d2d2d;
+  display: flex;
+  justify-content: center;
+  background-color: #FFF;
+  margin-right: 20px;
+}
+
+.report-flag-icon {
+  margin-right: 5px;
+}
+
+.favorite-option {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.count-flag-icon {
+  margin-right: 5px;
+}
+
+.count-btn {
+  border-radius: 40px;
+  width: 15vw;
+  min-width: 200px;
+  padding: 1vh 0;
+  color: black;
+  border: 2px solid aquamarine;
+  display: flex;
+  justify-content: center;
+  background-color: #FFF;
+}
+
+a{
+  text-decoration: none;
+  color:blue;
 }

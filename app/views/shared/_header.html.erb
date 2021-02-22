@@ -11,7 +11,7 @@
           <%end%>
         <% if user_signed_in? %>
      <li class = "upper-nickname">
-     <%= "#{current_user.nickname}" %>
+     <%=link_to "#{current_user.nickname}",user_path(current_user.id) %>
      </li>
         
      <li>

@@ -5,7 +5,7 @@
     </h1>
       <div class = "form">
         <div class = "form-body">
-          <%=form_with model: @post,local: true do |f|%>
+          <%=form_with model: @post,url: posts_path,local: true do |f|%>
             <div class="weight-bold-text">
               施設名
               <span class ="indispensable">(必須)</span>
@@ -21,12 +21,21 @@
               <span class ="indispensable">(必須)</span>
             </div>
               <%= f.collection_select(:congestion_rate_id,CongestionRate.all, :id, :name, {} ,{class:"select-box",id:"congestion_rate"})%>
-            <div class="weight-bold-text">
-              特徴または一言
+           <div class="weight-bold-text">
+              サウナ温度
               <span class ="indispensable">(必須)</span>
-              </div>
-                <%=f.text_area :features,class: "post-text",id:"features",placeholder:"特徴(必須 40字まで)",maxlength:"40"%>
-            
+            </div>
+              <%= f.collection_select(:sauna_temp_id,SaunaTemp.all, :id, :name, {} ,{class:"select-box",id:"sauna_temp"})%>
+              <div class="weight-bold-text">
+              水風呂温度
+              <span class ="indispensable">(必須)</span>
+            </div>
+              <%= f.collection_select(:water_temp_id,WaterTemp.all, :id, :name, {} ,{class:"select-box",id:"water_temp"})%>
+              <div class="weight-bold-text">
+              都道府県
+              <span class ="indispensable">(必須)</span>
+            </div>
+              <%= f.collection_select(:pref_id,Pref.all, :id, :name, {} ,{class:"select-box",id:"pref"})%>
              <div class = "img-upload">
                 <div class="weight-bold-text">
                   画像
@@ -37,19 +46,22 @@
               <p>
                 クリックしてファイルをアップロード
               </p>
-              <%=f.file_field :image, id:"post-image"%>
-              <div id = "image-list"></div>
+                <%=f.file_field :image,id:"post-image"%>
+                <div id = "image-list"></div>
              </div>
             <div class="weight-bold-text">
               感想
               <span class ="optional">(任意)</span>
             </div>
              <%=f.text_area :review,class: "post-text-review",id:"review",placeholder:"感想(必須 1,000字まで) (サウナ、水風呂、設備、ロウリュ、休憩スポット、食事、客層など思ったことを自由にお書きください。)",rows:"7",maxlength:"1000"%>
+            <div class="tag-field", id='tag-field'>
             <div class="weight-bold-text">
-              変わった人
-              <span class ="optional">(任意)</span>
-            </div>  
-              <%=f.text_area :storange_person,class: "post-text",id:"strange_person",placeholder:"変わった人(任意 100字まで) (筋トレする人、ヌシがいるなど)",maxlength:"100"%> 
+              タグ
+            </div>
+              <%= f.text_field :tag_name, class:"input-tag" %>
+            </div>
+            <div id="search-result">
+            </div>
               <div class = "post-btn-content">
                 <%=f.submit "投稿する",class:"posts-btn"%>
                 <%=link_to '戻る',post_path(@post.id),class: "back-btn"%>

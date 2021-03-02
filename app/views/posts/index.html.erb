@@ -3,8 +3,15 @@
    <h1 class="index-heading">
    みんなのととのい投稿一覧
     </h1> 
-      
-    <div class="card__wrapper">
-      <%=render partial: "shared/post",collection: @posts%>
-    </div>
-</div>
+    <%= search_form_for @p, url: posts_searchpost_path do |f| %>
+    <p>カテゴリー検索</p>
+       <%= f.collection_select :congestion_rate_id_eq,CongestionRate.all,:id,:name%>
+       <%= f.collection_select :sauna_temp_id_eq,SaunaTemp.all,:id,:name%>
+       <%= f.collection_select :water_temp_id_eq,WaterTemp.all,:id,:name%>
+       <%= f.collection_select :pref_id_eq,Pref.all,:id,:name%>
+      <%= f.submit '検索' %>
+      <% end %>
+      <% @posts.each do |post| %>
+       <%= render partial: "shared/post", locals: { post: post } %>
+        <% end %>
+</div> 

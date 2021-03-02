@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   }
   root 'homes#top'
   get "about"=>"homes#about"
+  get '/posts/searchpost',  to: 'posts#search_post'
   resources :posts do
-    resources :favorites, only: [:create,:destroy]
     collection do 
       get 'search'
     end 

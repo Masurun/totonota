@@ -49,6 +49,7 @@
   resize: none;
 }
 img{
-  max-width:100vw;
+  max-width:50vw;
   height: auto;
 }
+

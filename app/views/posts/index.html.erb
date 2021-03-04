@@ -1,17 +1,24 @@
 <%=render partial: "shared/header"%>
 <div class= "about-main">
+<div class = "content-header">
+<div class = "search-form">
+    <%= search_form_for @p, url: posts_searchpost_path do |f| %>
+    <p>カテゴリー検索</p>
+       サウナ温度:<%= f.collection_select :sauna_temp_id_eq,SaunaTemp.all,:id,:name,include_blank:'指定なし'%>
+       水風呂温度:<%= f.collection_select :water_temp_id_eq,WaterTemp.all,:id,:name,include_blank:'指定なし'%>
+       都道府県:<%= f.collection_select :pref_id_eq,Pref.all,:id,:name,include_blank:'指定なし'%> 
+      <%= f.submit '検索' %>
+      <% end %>
+    </div>
+
    <h1 class="index-heading">
    みんなのととのい投稿一覧
     </h1> 
-
-    <%= search_form_for @p, url: posts_searchpost_path do |f| %>
-    <p>カテゴリー検索</p>
-       <%= f.collection_select :sauna_temp_id_eq,SaunaTemp.all,:id,:name,include_blank:'指定なし'%>
-       <%= f.collection_select :water_temp_id_eq,WaterTemp.all,:id,:name,include_blank:'指定なし'%>
-       <%= f.collection_select :pref_id_eq,Pref.all,:id,:name,include_blank:'指定なし'%> 
-      <%= f.submit '検索' %>
-      <% end %>
+</div>
+   <div class ="contents">
       <% @posts.each do |post| %>
        <%= render partial: "shared/post", locals: { post: post } %>
         <% end %>
+
+   </div>
 </div> 

@@ -29,11 +29,5 @@ class Post < ApplicationRecord
   validates :review, length: { maximum: 1000 }
   validates :spa_name, length: { maximum: 40 }
   
-  def self.search(search)
-    if search != ""
-      Post.where('spa_name LIKE(?)',"%#{search}%")
-    else
-      Post.all.includes(:user).order('created_at DESC')
-  end
-  end
+  
 end

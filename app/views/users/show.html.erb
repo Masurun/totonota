@@ -23,10 +23,14 @@
       <h2 class="page-heading">
         <%= @user.nickname%>の投稿
       </h2>
-      <div class="user__card">
-        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
-        <%=render partial: "shared/post",collection: @posts%>
-      </div>
+      
+        <div class ="contents">
+      <% @posts.each do |post| %>
+       <%= render partial: "shared/post", locals: { post: post } %>
+        <% end %>
+
+   </div>
+      
     </div>
   </div>
 </div>

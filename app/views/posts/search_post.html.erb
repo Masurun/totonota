@@ -1,9 +1,11 @@
 <%=render partial: "shared/header"%>
 <div class= "about-main">
 <h1 class="index-heading">
-  検索結果<br><%= link_to '一覧へ戻る', posts_path %>
-    </h1> 
-
+  検索結果
+    </h1><br>
+<div class = "back-index" id = "back">
+ <%= link_to '一覧へ戻る', posts_path %>
+</div>
 <% if @results.length !=0 %> 
 <% @results.each do |post| %>
 
@@ -37,5 +39,7 @@
 
 
 <%end%>
+<%else%>
+<p>該当なし<p>
 <%end%> 
 </div>

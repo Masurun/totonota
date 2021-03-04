@@ -5,10 +5,9 @@ class Post < ApplicationRecord
   belongs_to_active_hash :sauna_temp
   belongs_to_active_hash :water_temp
   belongs_to_active_hash :pref
+  belongs_to_active_hash :chair_count
   belongs_to :user
   has_one_attached :image, dependent: :destroy
-  has_many :post_tag_relations, dependent: :destroy, dependent: :destroy
-  has_many :tags, through: :post_tag_relations, dependent: :destroy, dependent: :destroy
 
   with_options presence: true do
     validates :spa_name
@@ -18,6 +17,7 @@ class Post < ApplicationRecord
     validates :sauna_temp_id
     validates :water_temp_id
     validates :pref_id
+    validates :chair_count_id
   end
   with_options numericality: { other_than: 1 } do
     validates :visit_time_id
@@ -28,6 +28,4 @@ class Post < ApplicationRecord
   end
   validates :review, length: { maximum: 1000 }
   validates :spa_name, length: { maximum: 40 }
-  
-  
 end

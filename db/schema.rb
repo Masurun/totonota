@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_26_170200) do
+ActiveRecord::Schema.define(version: 2021_02_13_074749) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,15 +33,6 @@ ActiveRecord::Schema.define(version: 2021_02_26_170200) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "post_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "post_id"
-    t.bigint "tag_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["post_id"], name: "index_post_tag_relations_on_post_id"
-    t.index ["tag_id"], name: "index_post_tag_relations_on_tag_id"
-  end
-
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "spa_name", null: false
     t.integer "visit_time_id", null: false
@@ -49,6 +40,7 @@ ActiveRecord::Schema.define(version: 2021_02_26_170200) do
     t.integer "water_temp_id", null: false
     t.integer "sauna_temp_id", null: false
     t.integer "pref_id", null: false
+    t.integer "chair_count_id", null: false
     t.text "review", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -63,12 +55,6 @@ ActiveRecord::Schema.define(version: 2021_02_26_170200) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_sns_credentials_on_user_id"
-  end
-
-  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "tag_name", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -88,8 +74,6 @@ ActiveRecord::Schema.define(version: 2021_02_26_170200) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "post_tag_relations", "posts"
-  add_foreign_key "post_tag_relations", "tags"
   add_foreign_key "posts", "users"
   add_foreign_key "sns_credentials", "users"
 end

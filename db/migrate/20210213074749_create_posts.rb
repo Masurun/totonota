@@ -7,6 +7,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.integer :water_temp_id,       null: false
       t.integer :sauna_temp_id,       null: false
       t.integer :pref_id,             null: false
+      t.integer :chair_count_id,      null: false
       t.text    :review,              null: false
       t.references :user,             foreign_key: true
       t.timestamps

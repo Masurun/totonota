@@ -36,6 +36,11 @@
               <span class ="indispensable">(必須)</span>
             </div>
               <%= f.collection_select(:pref_id,Pref.all, :id, :name, {include_blank: true} ,{class:"select-box",id:"pref"})%>
+              <div class="weight-bold-text">
+              椅子の個数
+              <span class ="indispensable">(必須)</span>
+            </div>
+              <%= f.collection_select(:chair_count_id,ChairCount.all, :id, :name, {include_blank: true} ,{class:"select-box",id:"chair_count"})%>
              <div class = "img-upload">
                 <div class="weight-bold-text">
                   画像
@@ -58,10 +63,7 @@
             <div class="weight-bold-text">
               タグ
             </div>
-              <%= f.text_field :tag_name, class:"input-tag" %>
-            </div>
-            <div id="search-result">
-            </div>
+              
               <div class = "post-btn-content">
                 <%=f.submit "投稿する",class:"posts-btn"%>
                 <%=link_to '戻る',root_path,class: "back-btn"%>

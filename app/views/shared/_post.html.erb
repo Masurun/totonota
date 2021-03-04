@@ -14,10 +14,8 @@
       <li>混雑率:<%=post.congestion_rate.name%></li>
       <li>水風呂温度:<%=post.water_temp.name%></li>
       <li>サウナ温度:<%=post.sauna_temp.name%></li>
+      <li>椅子の個数:<%=post.chair_count.name%></li>
       <li>都道府県:<%=post.pref.name%></li>
-      <li> <%post.tags.each do |tag| %>
-              #<%=tag.tag_name%>
-            <%end%></li>
         <ul class="content__right__bottom--userName">
                 <li class = "user-nickname">by <%= link_to post.user.nickname, user_path(post.user)%></li>
                 <li class = "content__bottom__edit"><%= link_to '編集', edit_post_path(post.id), method: :get%></li>

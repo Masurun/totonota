@@ -12,9 +12,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = PostsTag.new(post_params)
-    if @post.valid?
-      @post.save
+    @post = Post.new(post_params)
+    if @post.save
       return redirect_to posts_path
     else
       render :new
@@ -47,7 +46,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:tag_name,:spa_name,:congestion_rate_id,:visit_time_id,:review,:image,:sauna_temp_id,:water_temp_id,:pref_id).merge(user_id: current_user.id)
+    params.require(:post).permit(:spa_name,:congestion_rate_id,:visit_time_id,:review,:image,:sauna_temp_id,:water_temp_id,:pref_id,:chair_count_id).merge(user_id: current_user.id)
   end
   def set_post
     @post=Post.find(params[:id])

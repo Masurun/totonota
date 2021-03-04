@@ -4,7 +4,7 @@
       <div class="post-show">
   <div class="post-box">
     <h2 class="spa_name">
-      <%= @post.spa_name %>
+      店名:<%= @post.spa_name %>
     </h2>
     <div class="post-img-content">
        <%= image_tag @post.image, class: 'images' %>
@@ -25,6 +25,18 @@
         <tr>
           <th class="detail-post">混雑具合</th>
           <td class="detail-value"><%= @post.congestion_rate.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-post">水風呂の温度</th>
+          <td class="detail-value"><%= @post.water_temp.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-post">サウナの温度</th>
+          <td class="detail-value"><%= @post.sauna_temp.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-post">都道府県</th>
+          <td class="detail-value"><%= @post.pref.name %></td>
         </tr>
         
       </tbody>

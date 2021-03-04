@@ -5,10 +5,7 @@
       <%=link_to "Totonota", about_path%>
     </div>
     <div class = "upper-left">
-    <%=form_with(url: search_posts_path,local: true,method: :get,class:"search-form") do |f|%>
-          <%=f.text_field :keyword, placeholder: "検索する",class: "search-input"%>
-          <%=f.submit "検索",class:"search-btn"%>
-          <%end%>
+    
         <% if user_signed_in? %>
      <li class = "upper-nickname">
      <%=link_to "#{current_user.nickname}",user_path(current_user.id) %>

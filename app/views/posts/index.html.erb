@@ -3,12 +3,12 @@
    <h1 class="index-heading">
    みんなのととのい投稿一覧
     </h1> 
+
     <%= search_form_for @p, url: posts_searchpost_path do |f| %>
     <p>カテゴリー検索</p>
-       <%= f.collection_select :congestion_rate_id_eq,CongestionRate.all,:id,:name%>
-       <%= f.collection_select :sauna_temp_id_eq,SaunaTemp.all,:id,:name%>
-       <%= f.collection_select :water_temp_id_eq,WaterTemp.all,:id,:name%>
-       <%= f.collection_select :pref_id_eq,Pref.all,:id,:name%>
+       <%= f.collection_select :sauna_temp_id_eq,SaunaTemp.all,:id,:name,include_blank:'指定なし'%>
+       <%= f.collection_select :water_temp_id_eq,WaterTemp.all,:id,:name,include_blank:'指定なし'%>
+       <%= f.collection_select :pref_id_eq,Pref.all,:id,:name,include_blank:'指定なし'%> 
       <%= f.submit '検索' %>
       <% end %>
       <% @posts.each do |post| %>

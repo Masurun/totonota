@@ -44,9 +44,6 @@
   text-decoration: none;
 }
 
-.or-text {
-  font-size: 30px;
-}
 
 .post-destroy {
   background-color: lightgray;
@@ -61,10 +58,11 @@
 .post-explain-box{
   font-size: 18px;
   margin: 40px 0px;
-  max-width: 70vh;
+  max-width: 100%;
+  height: auto;
   overflow-wrap: anywhere;
-  background-color: cornsilk;
-  color: black;
+  background-color:#00b7ce ;
+  color:white;
   
 }
 
@@ -98,4 +96,9 @@
 
 .tag-list{
   margin-bottom: 10px;
+}
+
+.btn-lists{
+  display: flex;
+  
 }

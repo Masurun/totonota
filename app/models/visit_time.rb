@@ -1,6 +1,6 @@
 class VisitTime < ActiveHash::Base
   self.data=[
-    {id: 1, name: '--'},
+    
     {id: 2, name: '1:00'}, 
     {id: 3, name: '2:00'},
     {id: 4, name: '3:00'},

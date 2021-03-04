@@ -6,14 +6,10 @@ class PostsController < ApplicationController
   def index
     @posts=Post.all.includes(:user).order('created_at DESC')
   end
+
   def new
     @post = Post.new
   end
-
-  def search_post
-    @results = @p.result
-  end
-
 
   def create
     @post = PostsTag.new(post_params)
@@ -25,10 +21,6 @@ class PostsController < ApplicationController
     end
   end
   def show
-  end
-
-  def search
-    @posts =Post.search(params[:keyword])
   end
 
   def edit
@@ -46,6 +38,10 @@ class PostsController < ApplicationController
       if @post.destroy
         redirect_to posts_path
       end
+  end
+
+  def search_post
+    @results = @p.result
   end
 
   private

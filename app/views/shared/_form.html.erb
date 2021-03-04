@@ -5,7 +5,7 @@
     </h1>
       <div class = "form">
         <div class = "form-body">
-          <%=form_with model: @post,url: posts_path,local: true do |f|%>
+          <%=form_with model: @post ,local: true do |f|%>
             <div class="weight-bold-text">
               施設名
               <span class ="indispensable">(必須)</span>
@@ -15,27 +15,27 @@
               来店時間
               <span class ="indispensable">(必須)</span>
             </div>
-              <%= f.collection_select(:visit_time_id,VisitTime.all, :id, :name, {}, {class:"select-box",id:"spa-visit_time"})%>
+              <%= f.collection_select(:visit_time_id,VisitTime.all, :id, :name,{include_blank: true},{class:"select-box",id:"spa-visit_time"})%>
             <div class="weight-bold-text">
               混雑率
               <span class ="indispensable">(必須)</span>
             </div>
-              <%= f.collection_select(:congestion_rate_id,CongestionRate.all, :id, :name, {} ,{class:"select-box",id:"congestion_rate"})%>
+              <%= f.collection_select(:congestion_rate_id,CongestionRate.all, :id, :name, {include_blank: true} ,{class:"select-box",id:"congestion_rate"})%>
            <div class="weight-bold-text">
               サウナ温度
               <span class ="indispensable">(必須)</span>
             </div>
-              <%= f.collection_select(:sauna_temp_id,SaunaTemp.all, :id, :name, {} ,{class:"select-box",id:"sauna_temp"})%>
+              <%= f.collection_select(:sauna_temp_id,SaunaTemp.all, :id, :name, {include_blank: true} ,{class:"select-box",id:"sauna_temp"})%>
               <div class="weight-bold-text">
               水風呂温度
               <span class ="indispensable">(必須)</span>
             </div>
-              <%= f.collection_select(:water_temp_id,WaterTemp.all, :id, :name, {} ,{class:"select-box",id:"water_temp"})%>
+              <%= f.collection_select(:water_temp_id,WaterTemp.all, :id, :name, {include_blank: true} ,{class:"select-box",id:"water_temp"})%>
               <div class="weight-bold-text">
               都道府県
               <span class ="indispensable">(必須)</span>
             </div>
-              <%= f.collection_select(:pref_id,Pref.all, :id, :name, {} ,{class:"select-box",id:"pref"})%>
+              <%= f.collection_select(:pref_id,Pref.all, :id, :name, {include_blank: true} ,{class:"select-box",id:"pref"})%>
              <div class = "img-upload">
                 <div class="weight-bold-text">
                   画像

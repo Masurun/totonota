@@ -1,6 +1,6 @@
 class SaunaTemp < ActiveHash::Base
   self.data=[
-    {id: 1, name: '--'},
+    
     {id: 2, name: '~80度'}, 
     {id: 3, name: '80~85度'},
     {id: 4, name: '85~90度'},

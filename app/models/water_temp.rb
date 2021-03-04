@@ -1,6 +1,6 @@
 class WaterTemp < ActiveHash::Base
   self.data=[
-    {id: 1, name: '--'},
+    
     {id: 2, name: '20度~'}, 
     {id: 3, name: '17度前後'},
     {id: 4, name: '15度前後'},

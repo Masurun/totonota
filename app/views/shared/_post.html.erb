@@ -1,17 +1,28 @@
- <div class="card">
-  <%= link_to image_tag(post.image, class: :card__img),post_path(post.id)%>
-      <li>
-        <%= link_to '編集', edit_post_path(post.id), method: :get %>
-      </li>
-        <li>
-          <%= link_to '削除', post_path(post.id), method: :delete %>
-        </li>
-    <div class="card__body">
-    <li class="tag-list">
-            <%post.tags.each do |tag| %>
+ <div class="content">
+  <div class="content__left">
+    <div class="content__left--image">
+      <%=link_to image_tag(post.image.variant(resize: '540x540')),post_path(post.id) %>
+    </div>
+  </div>
+  <div class="content__right">
+   <div class="content__right__top">
+      店名:<%= link_to post.spa_name, post_path(post.id), class: "content__right__top--title" %> 
+    </div>
+    
+    <div class="content__right__bottom">
+    <li>訪問日時:<%=post.visit_time.name%></li>
+      <li>混雑率:<%=post.congestion_rate.name%></li>
+      <li>水風呂温度:<%=post.water_temp.name%></li>
+      <li>サウナ温度:<%=post.sauna_temp.name%></li>
+      <li>都道府県:<%=post.pref.name%></li>
+      <li> <%post.tags.each do |tag| %>
               #<%=tag.tag_name%>
-            <%end%>
-          </li>
-    <%= link_to "by #{post.user.nickname}",root_path, class: :card__user %>
+            <%end%></li>
+        <ul class="content__right__bottom--userName">
+                <li class = "user-nickname">by <%= link_to post.user.nickname, user_path(post.user)%></li>
+                <li class = "content__bottom__edit"><%= link_to '編集', edit_post_path(post.id), method: :get%></li>
+                <li><%= link_to '削除', post_path(post.id), method: :delete %></li> 
+        </ul>
+    </div>
   </div>
 </div>

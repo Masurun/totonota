@@ -34,10 +34,6 @@
           <th class="detail-post">サウナの温度</th>
           <td class="detail-value"><%= @post.sauna_temp.name %></td>
         </tr>
-         <tr>
-          <th class="detail-post">椅子の数</th>
-          <td class="detail-value"><%= @post.chair_count.name %></td>
-        </tr>
         <tr>
           <th class="detail-post">都道府県</th>
           <td class="detail-value"><%= @post.pref.name %></td>
@@ -47,11 +43,10 @@
     </table>
     <%if user_signed_in?%>
     <%if current_user.id==@post.user_id%>
-    
-    <%= link_to "投稿の編集",edit_post_path(@post.id) ,class: "item-red-btn" %>
-    <p class="or-text">or</p>
-    <%= link_to "投稿の削除",post_path(@post.id), class:"item-destroy" ,method: :delete%>
-   
+    <ul class = "btn-lists">
+    <li><%= link_to "投稿の編集",edit_post_path(@post.id) ,class: "post-red-btn" %></li>
+    <li><%= link_to "投稿の削除",post_path(@post.id), class:"post-destroy" ,method: :delete%></li>
+    </ul>
     <%end%>
     <%end%>
     

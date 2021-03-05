@@ -24,7 +24,7 @@ has_many :posts
 | sauna_temp_id           | integer     | null: false       |
 | pref_id                 | integer     | null: false       |
 | chair_count_id          | integer     | null: false       |
-| review                  | integer     | null: false       |
+| review                  | text        | null: false       |
 | user                    | references  | foreign_key: true |
 
 

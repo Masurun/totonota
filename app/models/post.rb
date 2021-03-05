@@ -19,13 +19,7 @@ class Post < ApplicationRecord
     validates :pref_id
     validates :chair_count_id
   end
-  with_options numericality: { other_than: 1 } do
-    validates :visit_time_id
-    validates :congestion_rate_id
-    validates :sauna_temp_id
-    validates :water_temp_id
-    validates :pref_id
-  end
+  
   validates :review, length: { maximum: 1000 }
   validates :spa_name, length: { maximum: 40 }
 end

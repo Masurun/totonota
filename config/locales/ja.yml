@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    attributes:
+      post: 
+        spa_name: 施設名
+        visit_time_id: 訪問時間
+        congestion_rate_id: 混雑率
+        water_temp_id: 水風呂の温度
+        sauna_temp_id: サウナの温度
+        pref_id: 都道府県
+        chair_count_id: 椅子の数
+        image: 画像
+    errors:
+     messages: 
+      

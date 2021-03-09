@@ -62,11 +62,6 @@
               <span class ="optional">(任意)</span>
             </div>
              <%=f.text_area :review,class: "post-text-review",id:"review",placeholder:"感想(必須 1,000字まで) (サウナ、水風呂、設備、ロウリュ、休憩スポット、食事、客層など思ったことを自由にお書きください。)",rows:"7",maxlength:"1000"%>
-            <div class="tag-field", id='tag-field'>
-            <div class="weight-bold-text">
-              タグ
-            </div>
-              
               <div class = "post-btn-content">
                 <%=f.submit "投稿する",class:"posts-btn"%>
                 <%=link_to '戻る',root_path,class: "back-btn"%>

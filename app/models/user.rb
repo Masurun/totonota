@@ -6,6 +6,12 @@ class User < ApplicationRecord
   has_many :sns_credentials
   has_many :posts
   validates :nickname, presence: true
+  has_many :favorites, dependent: :destroy
+  has_many :favorites, through: :favorites
+  def favorite(post)
+    favorites_posts << post
+  end
+
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create

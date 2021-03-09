@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     collection do 
       get 'search'
     end 
+    post 'add' => 'favorites#create'
+    delete '/add' => 'favorites#destroy'
   end
-  resources :users,only:[:show,:new]
+  resources :users,only:[:show,:new] do
+    get :favorites, on: :collection
+  end
 end

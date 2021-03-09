@@ -38,9 +38,10 @@
           <th class="detail-post">都道府県</th>
           <td class="detail-value"><%= @post.pref.name %></td>
         </tr>
-        
       </tbody>
     </table>
+
+    <%=render partial: "favorites/favorite_area"%>
     <%if user_signed_in?%>
     <%if current_user.id==@post.user_id%>
     <ul class = "btn-lists">

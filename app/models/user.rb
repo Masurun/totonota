@@ -5,14 +5,17 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]
   has_many :sns_credentials
   has_many :posts
-  validates :nickname, presence: true
   has_many :favorites, dependent: :destroy
   has_many :favorites, through: :favorites
   has_many :comments, dependent: :destroy
+  
+  validates :nickname, presence: true
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
+  validates :password, length: { minimum: 6 }
+
   def favorite(post)
     favorites_posts << post
   end
-
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create

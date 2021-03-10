@@ -10,6 +10,7 @@ class Post < ApplicationRecord
   has_one_attached :image, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
+  
   with_options presence: true do
     validates :spa_name
     validates :visit_time_id

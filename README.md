@@ -4,7 +4,7 @@
 | nickname                  | string      | null: false       |
 | email                     | string      | null: false       |
 | encrypted_password        | string      | null: false       |
-| my_sauna                  | string      | null: false       |
+| my_sauna                  | string      |                   |
 | period_sauna_year         | integer     |                   |
 | period_sauna_month        | integer     |                   |
 

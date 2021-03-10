@@ -59,12 +59,10 @@ RSpec.describe User, type: :model do
         end
         it 'my_saunaが30文字以上では保存できない' do
           @user.my_sauna = 'a' * 31
-          binding.pry
           @user.valid?
           expect(@user.errors.full_messages).to include("My sauna is too long (maximum is 30 characters)")
         end
       end
-
       context 'ユーザー新規登録が正常に挙動する時' do
         it 'すべての情報が登録できること' do
           expect(@user).to be_valid
@@ -72,3 +70,4 @@ RSpec.describe User, type: :model do
       end
     end
   end
+  

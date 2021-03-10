@@ -12,6 +12,7 @@ class User < ApplicationRecord
   validates :nickname, presence: true
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
   validates :password, length: { minimum: 6 }
+  validates :my_sauna, length: { maximum: 30 }
 
   def favorite(post)
     favorites_posts << post

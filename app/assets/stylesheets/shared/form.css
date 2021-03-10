@@ -53,3 +53,7 @@ img{
   height: auto;
 }
 
+.radio-select-box{
+  height: 15px;
+  width: 5%;
+}

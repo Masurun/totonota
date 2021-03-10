@@ -23,17 +23,17 @@
               混雑率
               <span class ="indispensable">(必須)</span>
             </div>
-              <%= f.collection_select(:congestion_rate_id,CongestionRate.all, :id, :name, {include_blank: true} ,{class:"select-box",id:"congestion_rate"})%>
+              <%= f.collection_radio_buttons(:congestion_rate_id,CongestionRate.all, :id, :name, {include_blank: true} ,{class:"radio-select-box",id:"congestion_rate"})%>
            <div class="weight-bold-text">
               サウナ温度
               <span class ="indispensable">(必須)</span>
             </div>
-              <%= f.collection_select(:sauna_temp_id,SaunaTemp.all, :id, :name, {include_blank: true} ,{class:"select-box",id:"sauna_temp"})%>
+              <%= f.collection_radio_buttons(:sauna_temp_id,SaunaTemp.all, :id, :name, {include_blank: true} ,{class:"radio-select-box",id:"sauna_temp"})%>
               <div class="weight-bold-text">
               水風呂温度
               <span class ="indispensable">(必須)</span>
             </div>
-              <%= f.collection_select(:water_temp_id,WaterTemp.all, :id, :name, {include_blank: true} ,{class:"select-box",id:"water_temp"})%>
+              <%= f.collection_radio_buttons(:water_temp_id,WaterTemp.all, :id, :name, {include_blank: true} ,{class:"radio-select-box",id:"water_temp"})%>
               <div class="weight-bold-text">
               都道府県
               <span class ="indispensable">(必須)</span>
@@ -43,7 +43,7 @@
               椅子の個数
               <span class ="indispensable">(必須)</span>
             </div>
-              <%= f.collection_select(:chair_count_id,ChairCount.all, :id, :name, {include_blank: true} ,{class:"select-box",id:"chair_count"})%>
+              <%= f.collection_radio_buttons(:chair_count_id,ChairCount.all, :id, :name, {include_blank: true} ,{class:"radio-select-box",id:"chair_count"})%>
              <div class = "img-upload">
                 <div class="weight-bold-text">
                   画像

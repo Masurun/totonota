@@ -41,7 +41,6 @@
       </tbody>
     </table>
 <%if user_signed_in?%>
-    <%=render partial: "favorites/favorite_area"%>
     <%if current_user.id==@post.user_id%>
     <ul class = "btn-lists">
     <%= link_to "投稿の編集",edit_post_path(@post.id) ,class: "post-red-btn" %>

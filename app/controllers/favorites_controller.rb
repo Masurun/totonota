@@ -3,9 +3,9 @@ class FavoritesController < ApplicationController
     user=current_user
     post=Post.find(params[:post_id])
     if Favorite.create(user_id: user.id,post_id:post.id)
-    redirect_to post
+    redirect_to posts_path
     else
-      redirect_to root_url
+      redirect_to posts_path
     end
 
   end
@@ -15,9 +15,9 @@ class FavoritesController < ApplicationController
     post=Post.find(params[:post_id])
     if favorite=Favorite.find_by(user_id: user.id,post_id:post.id)
       favorite.delete
-      redirect_to post_path(favorite.post.id)
+      redirect_to posts_path
     else
-      redirect_to root_url
+      redirect_to posts_path
     end
   end
 end

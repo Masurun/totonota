@@ -17,6 +17,7 @@
       <li>椅子の個数:<%=post.chair_count.name%></li>
       <li>都道府県:<%=post.pref.name%></li>
       <div class = "favorite-content">
+      <%if user_signed_in?%>
       <% if !Favorite.exists?(user_id:current_user.id,post_id: post.id) %>
     <%= link_to "お気に入り",post_add_path(post),method: :post %>
     <% else %>
@@ -24,6 +25,7 @@
 <%end%>
 <%=post.favorites.count%>
 </div>
+<%end%>
         <ul class="content__right__bottom--userName">
                 <li class = "user-nickname">by <%= link_to post.user.nickname, user_path(post.user)%></li>
                 <li class = "content__bottom__show"><%= link_to '詳細',post_path(post.id) %></li> 

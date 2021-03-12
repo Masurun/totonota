@@ -87,3 +87,11 @@ align-items: flex-end;
   width: 70%;
   margin: auto;
 }
+
+.favorite-content a{
+  text-decoration: none;
+  color: #f6f6f6;
+}
+.content__bottom__show{
+  margin-right: 10px;
+}

@@ -4,4 +4,5 @@
     <% else %>
     <%= link_to "お気に入り解除",post_add_path(@post),method: :delete %>
 <%end%>
+<%=@post.favorites.count%>
 </div>

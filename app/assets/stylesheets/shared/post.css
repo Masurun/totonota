@@ -32,7 +32,7 @@
   font-size: 17px;
   color:white;
   background-color:#00b7ce;
-  height: 190px;
+  height: auto;
 }
 .content__right__bottom ul{
 display: flex;
@@ -87,4 +87,3 @@ align-items: flex-end;
   width: 70%;
   margin: auto;
 }
-

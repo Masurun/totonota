@@ -44,8 +44,9 @@
     <%=render partial: "favorites/favorite_area"%>
     <%if current_user.id==@post.user_id%>
     <ul class = "btn-lists">
-    <li><%= link_to "投稿の編集",edit_post_path(@post.id) ,class: "post-red-btn" %></li>
-    <li><%= link_to "投稿の削除",post_path(@post.id), class:"post-destroy" ,method: :delete%></li>
+    <%= link_to "投稿の編集",edit_post_path(@post.id) ,class: "post-red-btn" %>
+    
+    <%= link_to "投稿の削除",post_path(@post.id), class:"post-destroy" ,method: :delete%>
     </ul>
     <%end%>
     <%end%>

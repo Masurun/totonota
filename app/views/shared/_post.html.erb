@@ -16,6 +16,12 @@
       <li>サウナ温度:<%=post.sauna_temp.name%></li>
       <li>椅子の個数:<%=post.chair_count.name%></li>
       <li>都道府県:<%=post.pref.name%></li>
+      <% if !Favorite.exists?(user_id:current_user.id,post_id: post.id) %>
+    <%= link_to "お気に入り",post_add_path(post),method: :post %>
+    <% else %>
+    <%= link_to "お気に入り解除",post_add_path(post),method: :delete %>
+<%end%>
+<%=post.favorites.count%>
         <ul class="content__right__bottom--userName">
                 <li class = "user-nickname">by <%= link_to post.user.nickname, user_path(post.user)%></li>
                 <li class = "content__bottom__edit"><%= link_to '編集', edit_post_path(post.id), method: :get%></li>

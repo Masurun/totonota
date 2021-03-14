@@ -1,3 +1,4 @@
+
 .header-upper{
   display: flex;
   justify-content: space-between;
@@ -22,8 +23,8 @@ header {
   z-index: 1;
   width: 100%;
   color: aliceblue;
-  background-color: transparent;
-  border-bottom: 3px solid #f6f6f6;
+  background-color:#00b7ce ;
+  box-shadow: 0 2px 6px #c1ced7;
 }
 
 header a{

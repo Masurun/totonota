@@ -1,97 +1,42 @@
+.search-form{
+  font-weight: bold;
+  width: 70%;
+  margin: auto;
+  background-color:#00b7ce;
+}
 .contents{ 
   overflow: scroll;
   height: auto;
-  max-width: 100%;
-}
-
-.content{
-  padding: 10px;
-      border-bottom: 1px solid black ;
-      display: flex;
-      margin-bottom: 15px;
-      background-color:rgba(255,255,255,0.8);
-      max-width: 70%;
-      margin: auto
-}
-.content__right{
-  width: 50%;
-  margin-top:20px ;
-}
-
-.content__right__top{
-  background-color:#00b7ce;
-  border-bottom:2px solid #f6f6f6;
-  font-size: 20px;
-  font-weight: bold;
-}
-.content__right__top--title{
-  text-decoration: none;
-  color:white;
-}
-.content__right__bottom{
-  font-size: 17px;
-  color:white;
-  background-color:#00b7ce;
-  height: auto;
-}
-.content__right__bottom ul{
-display: flex;
-justify-content: flex-end;
-align-items: flex-end;
-}
-.content__right__bottom--userName a{
-  text-decoration: none;
-  color:white;
-}
-
-.user-nickname{
-  margin-right: 10px;
-}
-.content__bottom__edit{
-  margin-right: 10px;
-}
-
-.content__left{
-  padding-right: 20px;
-  width: 50%
-}
-.content__left--image{
-  height: auto;
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.search-form{
-  margin-bottom: 40px;
-  font-weight: bold;
-  width: 70%;
+  max-width: 70%;
+  background-color:#00b7ce ;
   margin: auto;
 }
-
 .index-heading{
   font-size: 40px;
-  
 }
-.index-heading a{
-  text-decoration: none;
-  color: aliceblue;
+
+.post_search{
+  margin-bottom:50px ;
 }
-.back-index a{
-  text-decoration: none;
-  font-size: 30px;
+
+.content a{
   color: aliceblue;
 }
 
-.content-header{
-  background-color:#00b7ce ;
-  width: 70%;
-  margin: auto;
+.content__bottom{
+  display: flex;
+ justify-content: center;
 }
 
-.favorite-content a{
-  text-decoration: none;
-  color: #f6f6f6;
+.content__right__bottom--userName{
+display: flex;
+margin-left: 15px;
 }
-.content__bottom__show{
-  margin-right: 10px;
+
+.content__bottom__edit{
+  margin-left: 15px;
+}
+
+.content__bottom__destroy{
+  margin-left: 15px;
 }

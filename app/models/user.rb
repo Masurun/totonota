@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :favorites, through: :favorites
   has_many :comments, dependent: :destroy
-  
+
   validates :nickname, presence: true
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
   validates :password, length: { minimum: 6 }

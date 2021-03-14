@@ -10,7 +10,7 @@ class Post < ApplicationRecord
   has_one_attached :image, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
-  
+
   with_options presence: true do
     validates :spa_name
     validates :visit_time_id
@@ -21,7 +21,7 @@ class Post < ApplicationRecord
     validates :pref_id
     validates :chair_count_id
   end
-  
+
   validates :review, length: { maximum: 1000 }
   validates :spa_name, length: { maximum: 40 }
 end

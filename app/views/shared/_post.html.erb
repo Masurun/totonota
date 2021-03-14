@@ -1,4 +1,4 @@
- <div class="content">
+ 
   <div class="content__left">
     <div class="content__left--image">
       <%=link_to image_tag(post.image.variant(resize: '540x540')),post_path(post.id) %>
@@ -26,12 +26,15 @@
 <%=post.favorites.count%>
 </div>
 <%end%>
-        <ul class="content__right__bottom--userName">
-                <li class = "user-nickname">by <%= link_to post.user.nickname, user_path(post.user)%></li>
+<div class = "content__bottom">
+        <div class="content__left__bottom--userName">
+        by <%= link_to post.user.nickname, user_path(post.user)%></li>
+        </div>
+        <div class = "content__right__bottom--userName">
                 <li class = "content__bottom__show"><%= link_to '詳細',post_path(post.id) %></li> 
                 <li class = "content__bottom__edit"><%= link_to '編集', edit_post_path(post.id), method: :get%></li>
-                <li><%= link_to '削除', post_path(post.id), method: :delete %></li> 
-        </ul>
-    </div>
+                <li class = "content__bottom__destroy"><%= link_to '削除', post_path(post.id), method: :delete %></li> 
+        </div>
+  </div>
   </div>
 </div>

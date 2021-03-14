@@ -19,9 +19,10 @@
     </h1> 
 </div>
    <div class ="contents">
+   <div class="content">
       <% @posts.each do |post| %>
        <%= render partial: "shared/post", locals: { post: post } %>
         <% end %>
-
+ </div>
    </div>
 </div> 

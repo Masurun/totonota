@@ -19,7 +19,7 @@
       <div class = "favorite-content">
       <%if user_signed_in?%>
       <% if !Favorite.exists?(user_id:current_user.id,post_id: post.id) %>
-    <%= link_to "お気に入り",post_add_path(post),method: :post %>
+    <%= link_to "お気に入り登録",post_add_path(post),method: :post %>
     <% else %>
     <%= link_to "お気に入り解除",post_add_path(post),method: :delete %>
 <%end%>

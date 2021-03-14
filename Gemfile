@@ -73,7 +73,5 @@ gem 'ancestry'
 gem 'ransack'
 gem 'rails-i18n'
 gem 'haml-rails'
-gem 'erb2haml'
+gem 'kaminari'
 gem "aws-sdk-s3", require: false
-gem 'bootstrap', '~> 4.4.1'
-gem 'jquery-rails'

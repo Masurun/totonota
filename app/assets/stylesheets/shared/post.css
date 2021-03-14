@@ -1,5 +1,4 @@
 .search-form{
-  margin-bottom: 40px;
   font-weight: bold;
   width: 70%;
   margin: auto;
@@ -16,7 +15,9 @@
   font-size: 40px;
 }
 
-
+.post_search{
+  margin-bottom:50px ;
+}
 
 .content a{
   color: aliceblue;
